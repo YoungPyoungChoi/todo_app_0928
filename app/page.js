@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useState } from "react";
 
 const NewTodoForm = ({ addTodo: _addTodo }) => {
@@ -7,7 +6,6 @@ const NewTodoForm = ({ addTodo: _addTodo }) => {
 
   const addTodo = () => {
     if (newTodoTitle.trim().length == 0) return;
-
     const id = 1;
     const title = newTodoTitle.trim();
 
@@ -15,7 +13,6 @@ const NewTodoForm = ({ addTodo: _addTodo }) => {
       id,
       title,
     };
-
     _addTodo(newTodo);
     setNewTodoTitle("");
   };
@@ -23,7 +20,7 @@ const NewTodoForm = ({ addTodo: _addTodo }) => {
   return (
     <form className="flex gap-[5px]" onSubmit={(e) => e.preventDefault()}>
       <input
-        className="input input-bordered"
+        className="input input-borered"
         type="text"
         value={newTodoTitle}
         placeholder="새 할일을 입력해주세요."
@@ -56,3 +53,6 @@ const App = () => {
 };
 
 export default App;
+
+//npm i -D daisyui@latest
+//  plugins: [require("daisyui")], 추가
